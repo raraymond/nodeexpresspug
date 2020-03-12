@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      nav
+        a(href="/")
+          img#logo(src="/images/logo.png" style='width:200px; height; 100px;')
+        ul
+          li
+            a(href="/sign-up") SIGN UP
+          li
+            a(href="/login") LOGIN
+          li
+            a(href="/account") ACCOUNT
+          li
+            a(href="/pricing") PRICING
+          li
+            a(href="/contact")  CONTACT
+          li
+            a(href="/admin")  ADMIN      
+      .app_nav
+        form(action="")
+          .input_wrapper
+            label(for="asset") Asset Name
+            input(type="text" id="asset" name ="asset") 
+          .input_wrapper
+            label(for="date") Date
+            input(type="date" id="date" name ="date") 
+          .input_wrapper
+            button(type="submit") Search
+    h1=title        
+      .account_nav      
+        hr
+        ul
+          li
+            a(href="/account/add") add a new asset
+          li
+            a(href="/account/edit") edit an existing asset
+          li
+            a(href="/account/delete") delete an existing asset
+          li
+            a(href="/account/search")  search for matches
+          li
+            a(href="/account/assets") view assets
+
+ 
+
+    block content
+
