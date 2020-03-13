@@ -7,8 +7,8 @@ const appController = require ('../controllers/appController');
 /* GET home page. */
 router.get('/', appController.homePage)
 
-router.get('/sign-up', appController.signUpGet, appController.loginGet)
 router.get('/login', appController.loginGet)
+router.get('/sign-up', appController.signUpGet)
 
 router.get('/account', appController.accountGet)
 router.get('/pricing', appController.pricingGet)
@@ -18,16 +18,24 @@ router.get('/admin', appController.adminGet)
 
 //Account Routes
 // router.get('/account/:name', function (req, res){
-//   const name = req.params.name
-//   res.render('account', { title: "Account Home", name})
-// })
-router.get('/account/add', appController.addAssetGet)
-router.post('/account/add', appController.addAssetPost)
-router.get('/account/edit', appController.editAssetGet)
-router.post('/account/edit', appController.editAssetPost)
-router.get('/account/delete', appController.deleteAssetGet)
-router.post('/account/delete', appController.deleteAssetPost)
+    //   const name = req.params.name
+    //   res.render('account', { title: "Account Home", name})
+    // })
 router.get('/account/assets', appController.listAllAssets)
-router.get('/account/assets/asset', appController.viewAsset)
+router.get('/account/assets/add', appController.addAssetGet)
+router.post('/account/assets/add', appController.addAssetPost)
+router.get('/account/assets/edit-delete', appController.editDeleteGet)
+router.post('/account/assets/edit-delete', appController.editDeletePost)
 
+router.get('/account/assets/monitoring-on',appController.monitoringOn, appController.listAllAssets )
+router.get('/account/assets/monitoring-off',appController.monitoringOff, appController.listAllAssets )
+    
+
+router.get('/account/assets/edit-delete/:assetId/update', appController.updateAssetGet)
+router.post('/account/assets/edit-delete/:assetId/update', appController.updateAssetPost)
+
+router.get('/account/assets/edit-delete/:assetId/delete', appController.deleteAssetGet)
+router.post('/account/assets/edit-delete/:assetId/delete', appController.deleteAssetPost)
+
+router.get('/account/assets/:asset', appController.viewAsset)
 module.exports = router;

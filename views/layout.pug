@@ -21,30 +21,32 @@ html
             a(href="/contact")  CONTACT
           li
             a(href="/admin")  ADMIN      
-      .app_nav
-        form(action="")
-          .input_wrapper
-            label(for="asset") Asset Name
-            input(type="text" id="asset" name ="asset") 
-          .input_wrapper
-            label(for="date") Date
-            input(type="date" id="date" name ="date") 
-          .input_wrapper
-            button(type="submit") Search
+      //- .app_nav
+      //-   form(action="")
+      //-     .input_wrapper
+      //-       label(for="asset") Asset Name
+      //-       input(type="text" id="asset" name ="asset") 
+      //-     .input_wrapper
+      //-       label(for="date") Date
+      //-       input(type="date" id="date" name ="date") 
+      //-     .input_wrapper
+      //-       button(type="submit") Search
     h1=title        
       .account_nav      
         hr
         ul
           li
-            a(href="/account/add") add a new asset
+            a(href="/account/assets") view all assets
           li
-            a(href="/account/edit") edit an existing asset
+            a(href="/account/assets/add") add a new asset
           li
-            a(href="/account/delete") delete an existing asset
+            a(href="/account/assets/edit-delete") edit/delete an existing asset
           li
-            a(href="/account/search")  search for matches
+            a(href="/account/search")  search for matches 
           li
-            a(href="/account/assets") view assets
+            a(href="/account/assets/monitoring-on") view monitored assets
+          li
+            a(href="/account/assets/monitoring-off") view non-monitored assets 
 
  
 

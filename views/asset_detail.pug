@@ -1,0 +1,12 @@
+extends layout
+include mixins/_asset
+block content
+  each asset in assetData
+    .asset
+      +asset(asset)
+      .asset_options
+      a(href=`/account/assets/edit-delete/${asset._id}/delete`)
+        button delete
+      a(href=`/account/assets/edit-delete/${asset._id}/update`)
+        button edit
+      

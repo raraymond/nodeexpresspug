@@ -1,0 +1,8 @@
+extends layout
+include mixins/_asset
+block content
+  .monitoring_wrapper
+    ul
+      each asset in allAssets
+        +asset(asset)
+      

@@ -1,0 +1,14 @@
+extends layout
+block content
+  h3= title
+  form(action="", method="post")
+    .form_input
+      label(for="asset_id") Asset ID:
+      input(type="text" name="asset_id" id ="asset_id")
+      p or: 
+    .form_input
+      label(for="asset_name") Asset Name:
+      input(type="text" name="asset_name" id ="asset_name")
+    .form_input
+      button(type="submit") SEARCH
+

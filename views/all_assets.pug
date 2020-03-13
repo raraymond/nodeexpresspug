@@ -1,7 +1,7 @@
 extends layout
 include mixins/_asset
 block content
-  .all_asset_wrapper
-    +asset
-
-    h2= name
+  each asset in allAssets
+    .all_asset_wrapper
+      +asset(asset)
+    

@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const mongoose = require('mongoose')
+
 var indexRouter = require('./routes/index');
 
 var app = express();
@@ -12,6 +14,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+//set up mongoose connection
+mongoose.connect("<<<ADD URI HERE>>>")
+mongoose.Promise = global.Promise;
+mongoose.connection.on('error', (error) => console.error(error.message))//set up errors to console
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,21 @@
+mixin assetForm(asset={})
+
+  form(action="", method="post")
+    .form_input
+      label(for="asset_name") Asset Name:
+      input(type="text" name="asset_name" required value=asset.asset_name id="asset_name")
+    .form_input
+      label(for="asset_notes") Asset Notes:
+      textarea(name="asset_notes", id="asset_notes" cols="30", rows="10")=asset.asset_notes
+    .form_input
+      label(for="image") Asset Image
+      input(type="file", name="image" id="image")
+      label(for="publish_location") Publish Location (used if you use takedown service):
+      input(type="text" name="publish_location" required value=asset.publish_location id="publish_location")
+    .form_input
+      label(for="enable_monitoring") Enable Monitoring
+      input(type="radio" name="enable_monitoring" value="true" checked id="enabled")      
+      label(for="enable_monitoring") Disable Monitoring
+      input(type="radio" name="enable_monitoring" value="false" id="disabled")      
+    .form_input
+      button(type="submit") CONFIRM

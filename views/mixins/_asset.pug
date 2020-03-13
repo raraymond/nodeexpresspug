@@ -1,18 +1,26 @@
-mixin asset
+mixin asset(asset)
 
   .asset
     .asset_img
-      a(href='')  
-        img(src='/images/test.png')
-    .asset_info
-      a(href='')    
-        h3 Asset 1
+      a(href=`/images/${asset.image}`)  
+        img(src=`/images/${asset.image}`)
+    .asset_info    
+      a(href=`/account/assets/${asset._id}`)
+        h3= asset.asset_name
       hr
-      p asset id: 1352343252
-      p Date Created: 03/12/2020
-      p Number of matches: 100
-      p matches with auto takedown: 0
-      p last time scanned: 3/12/2020
-      p take downs filed: 0
-      p take downs won: 0
-      p monitoring status: true
+      p Asset Unique ID:
+        a(href=`/account/assets/${asset._id}`)
+          p= `${asset._id}`
+  
+      p= `Date Added to Database: ${asset.date_added}`
+      p= `published locations: ${asset.publish_location}`
+      p= `Number of matches: ${asset.match_results}`
+      p matches with auto takedown: 0 dummy data
+      p last time scanned: 3/12/2020 dummy data
+      p take downs filed: 0 dummy data
+      p take downs won: 0 dummy datagrid
+      p= `monitoring status: ${asset.enable_monitoring}`
+      p= `Asset Notes: ${asset.asset_info}`
+    
+
+    
